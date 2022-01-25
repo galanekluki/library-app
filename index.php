@@ -16,5 +16,5 @@ $category = new Category();
 var_dump($category);
 $author = new Author();
 var_export($author);
-$reader = new Reader('john', 'smith');
+$reader = new Reader();
 var_dump($reader);
