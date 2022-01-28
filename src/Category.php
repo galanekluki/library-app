@@ -4,13 +4,21 @@
 class Category {
 
 	private string $name;
-	private array $books;
+	private Book $books;
 
-	public function __construct(string $name) {
+	public function __construct(string $name, Book $books) {
 
 		$this->name = $name;
-		$this->books = [];
+		$this->books = $books;
 	}
 
+	public function getName(): string {
 
+		return $this->name;
+	}
+
+	public function getBook(): Book {
+
+		return $this->books;
+	}
 }
