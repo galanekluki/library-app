@@ -48,20 +48,28 @@ class Library {
 				return $book;
 			}
 		}
+			return[];
 	}
 
 	public function findBookByName(Author $authors, Book $books) {
 
 		foreach ($books as $key => $book) {
 
-			if ($key == $authors) {
+			if ($key == $authors['name']) {
 				return $book;
 			}
 		}
+			return[];
 
 	}
 
-	public function findBooksByAuthLastName() {
+	public function findBooksByAuthLastName(Author $authors, Book $books) {
 		
+		foreach ($books as $key => $book) {
+			if ($key == $authors['lastName']) {
+				return $book;
+			}
+		}
 	}
+		return[];
 }
