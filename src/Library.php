@@ -3,22 +3,22 @@
 
 class Library {
 
-	private array $book;
+	private array $books;
 	private array $authors;
 	private array $categories;
 	private BorrowedBooks $borrowedBooks;
 
-	public function __construct(array $book, array $authors, array $categories, BorrowedBooks $borrowedBooks) {
+	public function __construct(array $books, array $authors, array $categories, BorrowedBooks $borrowedBooks) {
 
-		$this->book = $books;
+		$this->books = $books;
 		$this->authors = $authors;
 		$this->categories = $categories
 		$this->borrowedBooks = $borrowedBooks;
 	}
 
-	public function getBook(): array {
+	public function getBooks(): array {
 
-		return $this->book;
+		return $this->books;
 	}
 
 	public function getAuthor(): array {
@@ -36,9 +36,9 @@ class Library {
 		return $this->borrowedBooks;
 	}
 
-	public function addBook(Book $book) {
+	public function addBook(array $book) {
 
-		 $this->book[] = $books;
+		 $this->books[] = $books;
 	}
 
 	public function findBooksByCategory() {
