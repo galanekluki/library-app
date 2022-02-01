@@ -4,11 +4,11 @@
 class BorrowedBooks {
 
 	private Reader $reader;
-	private Book $book;
+	private array $book;
 	private string $borrowDate;
 	private string $returnDate;
 
-	public function __construct(Reader $reader, Book $book, string $borrowDate, string $returnDate) {
+	public function __construct(Reader $reader, array $book, string $borrowDate, string $returnDate) {
 
 		$this->reader = $reader;
 		$this->book = $book;
@@ -21,7 +21,7 @@ class BorrowedBooks {
 		return $this->reader;
 	}
 
-	public function getBook(): Book {
+	public function getBook(): array {
 
 		return $this->book;
 	} 

@@ -6,9 +6,9 @@ class Book {
 	private string $name;
 	private array $authors;
 	private int $pages;
-	private Category $category;
+	private array $category;
 
-	public function __construct(string $name, array $authors, int $pages, Category $category) {
+	public function __construct(string $name, array $authors, int $pages, array $category) {
 
 		$this->name = $name;
 		$this->pages = $pages;
@@ -28,7 +28,7 @@ class Book {
 		return $this->pages;
 	}
 
-	public function getCategory(): Category {
+	public function getCategory(): array {
 		return $this->category;
 	}
 }

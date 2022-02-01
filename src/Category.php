@@ -4,12 +4,12 @@
 class Category {
 
 	private string $name;
-	private Book $books;
+	private array $book;
 
-	public function __construct(string $name, Book $books) {
+	public function __construct(string $name, array $book) {
 
 		$this->name = $name;
-		$this->books = $books;
+		$this->book = $books;
 	}
 
 	public function getName(): string {
@@ -17,8 +17,8 @@ class Category {
 		return $this->name;
 	}
 
-	public function getBook(): Book {
+	public function getBook(): array {
 
-		return $this->books;
+		return $this->book;
 	}
 }

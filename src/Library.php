@@ -3,30 +3,30 @@
 
 class Library {
 
-	private Book $books;
-	private Author $authors;
-	private Category $categories;
+	private array $book;
+	private array $authors;
+	private array $categories;
 	private BorrowedBooks $borrowedBooks;
 
-	public function __construct(Book $books, Author $authors, Category $categories, BorrowedBooks $borrowedBooks) {
+	public function __construct(array $book, array $authors, array $categories, BorrowedBooks $borrowedBooks) {
 
-		$this->books = $books;
+		$this->book = $books;
 		$this->authors = $authors;
 		$this->categories = $categories
 		$this->borrowedBooks = $borrowedBooks;
 	}
 
-	public function getBook(): Book {
+	public function getBook(): array {
 
-		return $this->books;
+		return $this->book;
 	}
 
-	public function getAuthor(): Author {
+	public function getAuthor(): array {
 
 		return $this->authors;
 	}
 
-	public function getCategory(): Category {
+	public function getCategory(): array {
 
 		return $this->categories;
 	}
@@ -36,40 +36,22 @@ class Library {
 		return $this->borrowedBooks;
 	}
 
-	public function addBook(Book $books) {
+	public function addBook(Book $book) {
 
-		 $this->books[] = $books;
+		 $this->book[] = $books;
 	}
 
-	public function findBooksByCategory(Category $categories, Book $books) {
+	public function findBooksByCategory(Category $categories,  $book) {
 		
-		foreach($books as $key=> $book) {
-			if ($key == $category) {
-				return $book;
-			}
-		}
-			return[];
+		
 	}
 
 	public function findBookByName(Author $authors, Book $books) {
 
-		foreach ($books as $key => $book) {
-
-			if ($key == $authors['name']) {
-				return $book;
-			}
-		}
-			return[];
-
+		
 	}
 
 	public function findBooksByAuthLastName(Author $authors, Book $books) {
 		
-		foreach ($books as $key => $book) {
-			if ($key == $authors['lastName']) {
-				return $book;
-			}
-		}
-	}
-		return[];
+		
 }
