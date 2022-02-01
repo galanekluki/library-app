@@ -41,17 +41,17 @@ class Library {
 		 $this->book[] = $books;
 	}
 
-	public function findBooksByCategory(Category $categories,  $book) {
+	public function findBooksByCategory() {
 		
+		foreach ()
+	}
+
+	public function findBookByName() {
+
 		
 	}
 
-	public function findBookByName(Author $authors, Book $books) {
-
-		
-	}
-
-	public function findBooksByAuthLastName(Author $authors, Book $books) {
+	public function findBooksByAuthLastName() {
 		
 		
 }

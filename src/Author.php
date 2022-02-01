@@ -5,13 +5,13 @@ class Author {
 
 	private string $firstName;
 	private string $lastName;
-	private array $book;
+	private array $books;
 
-	public function __construct(string $firstName, string $lastName, array $book) {
+	public function __construct(string $firstName, string $lastName, array $books) {
 
 		$this->firstName = $firstName;
 		$this->lastName = $lastName;
-		$this->book = $books;
+		$this->books = $books;
 	}
 
 	public function getFirstName(): string {
@@ -22,7 +22,7 @@ class Author {
 		return $this->lastName;
 	}
 
-	public function getBook(): array {
-		return $this->book;
+	public function getBooks(): array {
+		return $this->books;
 	}
 }
