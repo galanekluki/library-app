@@ -1,57 +1,59 @@
 <?php 
 
 
-class Library {
-
+class Library
+{
+    /** @var Book[]  */
 	private array $books;
 	private array $authors;
 	private array $categories;
-	private BorrowedBooks $borrowedBooks;
 
-	public function __construct(array $books, array $authors, array $categories, BorrowedBooks $borrowedBooks) {
-
+	public function __construct(array $books, array $authors, array $categories)
+    {
 		$this->books = $books;
 		$this->authors = $authors;
-		$this->categories = $categories
-		$this->borrowedBooks = $borrowedBooks;
+		$this->categories = $categories;
 	}
 
-	public function getBooks(): array {
-
+	public function getBooks(): array
+    {
 		return $this->books;
 	}
 
-	public function getAuthor(): array {
-
+	public function getAuthor(): array
+    {
 		return $this->authors;
 	}
 
-	public function getCategory(): array {
-
+	public function getCategory(): array
+    {
 		return $this->categories;
 	}
 
-	public function getBorrowedBooks(): BorrowedBooks {
-
-		return $this->borrowedBooks;
+	public function addBook(array $book): void
+    {
+        $this->books[] = $book;
 	}
 
-	public function addBook(array $book) {
+	public function findBooksByCategoryName(string $categoryName): array
+    {
+        $foundBooks = [];
+        foreach ($this->books as $book) {
+            if ($book->getCategory()->getName() == $categoryName) {
+                $foundBooks[] = $book;
+            }
+        }
 
-		 $this->books[] = $books;
+        return $foundBooks;
 	}
 
-	public function findBooksByCategory() {
-		
-		foreach ()
+	public function findBookByName()
+    {
+        //TODO: implement body of method
 	}
 
-	public function findBookByName() {
-
-		
-	}
-
-	public function findBooksByAuthLastName() {
-		
-		
+	public function findBooksByAuthLastName()
+    {
+        //TODO: implement body of method
+    }
 }
