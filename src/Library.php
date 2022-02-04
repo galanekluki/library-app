@@ -34,24 +34,38 @@ class Library {
 		 $this->books[] = $book;
 	}
 
-	public function findBooksByCategory(Category) {
+	public function findBooksByCategoryName(string $categoryName): array {
+        $foundBooks = [];
+        foreach ($this->books as $book) {
+            if ($book->getCategory()->getName() == $categoryName) {
+                $foundBooks[] = $book;
+            }
+        }
 
-		$foundBooks = [];
+        return $foundBooks;
+	}
+	public function findBookByName(string $name): array {
+ 
+ 		$foundBooks = [];
 		foreach ($this->books as $book) {
-			if ($book->getCategory() == Category) {
-				$foundBooks[] = $book;
+			if ($book->getName() == $name) {
+				$foundBooks = $book;
 			}
 		}
 
 		return $foundBooks;
 	}
 
-	public function findBookByName() {
-
+	public function findBooksByAuthLastName(string $lastName): array {
 		
+		$foundBooks = [];
+		foreach($this->books as $book) {
+			if ($book->getAuthor()->getLastName() == $lastName) {
+				$foundBooks = $book;
+			}
+		}
+
+		return $foundBooks;
 	}
 
-	public function findBooksByAuthLastName() {
-		
-	
 }

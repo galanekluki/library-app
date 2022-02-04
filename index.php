@@ -8,7 +8,7 @@ require_once "src/Library.php";
 require_once "src/Reader.php";
 require_once "src/BorrowedBooks.php";
 
-$library = new Library();
+/*$library = new Library();
 var_dump($library);
 $book = new Book();
 var_dump($book);
@@ -17,4 +17,13 @@ var_dump($category);
 $author = new Author();
 var_export($author);
 $reader = new Reader();
-var_dump($reader);
+var_dump($reader); */
+
+$comedyCategory = new Category('Komedia', []);
+$author = new Author('Janek', 'Testowy', []);
+$funnyBook = new Book('Szatan w 3 klasie.', [$author], 321, $comedyCategory);
+
+$library = new Library([$funnyBook],[$author],[$comedyCategory]);
+
+$allComedyBooks = $library->findBooksByCategoryName('Komedia');
+var_dump($allComedyBooks);

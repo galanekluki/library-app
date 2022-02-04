@@ -8,7 +8,7 @@ class Book {
 	private int $pages;
 	private Category $category;
 
-	public function __construct(string $name, array $authors, int $pages, Category $category;) {
+	public function __construct(string $name, array $authors, int $pages, Category $category) {
 
 		$this->name = $name;
 		$this->pages = $pages;
