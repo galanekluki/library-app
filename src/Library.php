@@ -44,12 +44,12 @@ class Library {
 
         return $foundBooks;
 	}
-	public function findBookByName(string $name): array {
+	public function findBooksByName(string $name): array {
  
  		$foundBooks = [];
 		foreach ($this->books as $book) {
 			if ($book->getName() == $name) {
-				$foundBooks = $book;
+				$foundBooks[]= $book;
 			}
 		}
 
@@ -60,8 +60,8 @@ class Library {
 		
 		$foundBooks = [];
 		foreach($this->books as $book) {
-			if ($book->getAuthor()->getLastName() == $lastName) {
-				$foundBooks = $book;
+			if ($book->getAuthor()->getName() == $lastName) {
+				$foundBooks[] = $book;
 			}
 		}
 
