@@ -1,7 +1,7 @@
 <?php 
 
 
-class BorrowedBooks {
+class BorrowedBook {
 
 	private Reader $reader;
 	private array $books;

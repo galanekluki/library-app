@@ -19,7 +19,7 @@ class Library {
 		return $this->books;
 	}
 
-	public function getAuthor(): array {
+	public function getAuthors(): array {
 
 		return $this->authors;
 	}
@@ -60,8 +60,10 @@ class Library {
 		
 		$foundBooks = [];
 		foreach($this->books as $book) {
-			if ($book->getAuthor()->getName() == $lastName) {
-				$foundBooks[] = $book;
+			foreach($book->getAuthors() as $author) {
+				if ($author->getLastName() == $lastname) {
+					$foundBooks[] = $book;
+				}
 			}
 		}
 
