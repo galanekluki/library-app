@@ -6,7 +6,7 @@ require_once "src/Author.php";
 require_once "src/Category.php";
 require_once "src/Library.php";
 require_once "src/Reader.php";
-require_once "src/BorrowedBooks.php";
+require_once "src/BorrowedBook.php";
 
 /*$library = new Library();
 var_dump($library);
@@ -22,8 +22,23 @@ var_dump($reader); */
 $comedyCategory = new Category('Komedia', []);
 $author = new Author('Janek', 'Testowy', []);
 $funnyBook = new Book('Szatan w 3 klasie.', [$author], 321, $comedyCategory);
-
-$library = new Library([$funnyBook],[$author],[$comedyCategory]);
-
+$library = new Library([$funnyBook],[$author],[$comedyCategory], []);
 $allComedyBooks = $library->findBooksByCategoryName('Komedia');
 var_dump($allComedyBooks);
+var_dump($funnyBook);
+
+$adventureCategory = new Category('Adventure', []);
+var_dump($adventureCategory);
+$author1 = new Author('Alexander', 'Dumas', []);
+$adventureBook = new Book('Hrabia Monte Christo', [$author1], 444, $adventureCategory);
+var_dump($adventureBook->getPages());
+$library1 = new Library([$adventureBook], [$author1], [$adventureCategory], []);
+$allAdventureBooks = $library1->findBooksByAuthLastName('Dumas');
+var_dump($allAdventureBooks);
+$borrowedBook = new BorrowedBook(new Reader('Lukasz', 'Galan'), [$adventureBook], '22-01-2022', '29-01-2022');
+var_dump($borrowedBook);
+$library->addBook($adventureBook);
+var_dump($library1->addBook($adventureBook));
+var_dump($library->addBook($funnyBook));
+
+

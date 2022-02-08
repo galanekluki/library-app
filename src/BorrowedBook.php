@@ -11,7 +11,7 @@ class BorrowedBook {
 	public function __construct(Reader $reader, array $books, string $borrowDate, string $returnDate) {
 
 		$this->reader = $reader;
-		$this->books = $book;
+		$this->books = $books;
 		$this->borrowedDate =$borrowDate;
 		$this->returnDate =$returnDate;
 }
@@ -35,7 +35,5 @@ class BorrowedBook {
 
 		return $this->returnDate;
 	}
-
-
 
 }
