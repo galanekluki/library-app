@@ -7,6 +7,7 @@ require_once "src/Category.php";
 require_once "src/Library.php";
 require_once "src/Reader.php";
 require_once "src/BorrowedBook.php";
+require_once "src/Database.php";
 
 /*$library = new Library();
 var_dump($library);
@@ -38,11 +39,21 @@ var_dump($adventureBook->getPages());
 $library1 = new Library([$adventureBook], [$author1], [$adventureCategory], []);
 $allAdventureBooks = $library1->findBooksByAuthLastName('Dumas');
 var_dump($allAdventureBooks);
-$borrowedBook = new BorrowedBook(new Reader('Lukasz', 'Galan'), [$adventureBook], '22-01-2022', '29-01-2022');
-var_dump($borrowedBook);
+$borrowedBook = new BorrowedBook(new Reader('Lukasz', 'Galan'), new Book('W Pustyni i w puszczy', [$author2], 444, new Category('Horror', [])), 
+	'22-01-2022', '29-01-2022');
 $library->addBook($adventureBook);
 var_dump($library1->addBook($adventureBook));
 var_dump($library->addBook($funnyBook));
-var_dump($author2);
+var_dump($borrowedBook);
+$host = 'mysql';
+$database = 'library'
+$username = 'root';
+$password = '123';
+$port = 3306;
+
+$database = new Database($host, $username, $password, $database, $port);
+
+$database->insert('book', ['name', 'pages', 'category_id'], ['Fajna ksiazka', 120, 1]); // nic nie zwraca ale rekord powinien sie pojawic w bazie
+
 
 
