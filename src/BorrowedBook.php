@@ -12,8 +12,8 @@ class BorrowedBook {
 
 		$this->reader = $reader;
 		$this->book = $book;
-		$this->borrowedDate =$borrowDate;
-		$this->returnDate =$returnDate;
+		$this->borrowedDate = $borrowDate;
+		$this->returnDate = $returnDate;
 }
 
 	public function getReader(): Reader {

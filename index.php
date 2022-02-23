@@ -45,15 +45,18 @@ $library->addBook($adventureBook);
 var_dump($library1->addBook($adventureBook));
 var_dump($library->addBook($funnyBook));
 var_dump($borrowedBook);
+
 $host = 'mysql';
-$database = 'library'
+$database = 'library';
 $username = 'root';
 $password = '123';
 $port = 3306;
 
 $database = new Database($host, $username, $password, $database, $port);
 
-$database->insert('book', ['name', 'pages', 'category_id'], ['Fajna ksiazka', 120, 1]); // nic nie zwraca ale rekord powinien sie pojawic w bazie
+$database->insert('book', ['title', 'pages', 'category_id'], ["'Zbrodnia i kara'", 120, 6]); // nic nie zwraca ale rekord powinien sie pojawic w bazie
+
+var_dump($sql);
 
 
 
